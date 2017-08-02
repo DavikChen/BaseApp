@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.davik.baseapp.contract.BaseContract;
 import com.davik.baseapp.presenter.BasePresenter;
 import com.davik.baseapp.utils.HLogUtil;
-import com.davik.baseapp.utils.MyToast;
 
 import butterknife.ButterKnife;
 
