@@ -189,8 +189,5 @@ public abstract class BaseFragment<V extends BaseContract.IBase, P extends BaseP
         }
     }
 
-    @Override
-    public void showToast(int resId) {
-        MyToast.show(resId);
-    }
+
 }
