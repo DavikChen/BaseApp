@@ -5,8 +5,6 @@ import android.content.Context;
 
 /**
  * Description：
- * Author: Hansion
- * Time: 2017/1/19 9:16
  */
 public class App extends Application {
 

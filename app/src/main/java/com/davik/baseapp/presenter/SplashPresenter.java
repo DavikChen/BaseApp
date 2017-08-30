@@ -6,8 +6,6 @@ import com.davik.baseapp.utils.SharedPrefsUtil;
 
 /**
  * Description：
- * Author: Hansion
- * Time: 2017/2/3 11:22
  */
 public class SplashPresenter extends BasePresenter<SplashActivity> implements SplashContract.ISplashPresenter {
 
@@ -18,7 +16,7 @@ public class SplashPresenter extends BasePresenter<SplashActivity> implements Sp
             SharedPrefsUtil.putValue(getView(),"isFirstRun", "isFirstRun", false);
             getView().goHome();
         } else {
-            getView().goGuide();
+            getView().goHome();
         }
     }
 }

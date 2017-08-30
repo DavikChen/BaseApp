@@ -14,8 +14,6 @@ import butterknife.ButterKnife;
 
 
 /**
- * Description：MVP模式下的BaseActivity
- * Author: Hansion
  * Time: 2016/12/1 16:51
  */
 public abstract class BaseActivity<V extends BaseContract.IBase, P extends BasePresenter<V>> extends FragmentActivity implements BaseContract.IBase {

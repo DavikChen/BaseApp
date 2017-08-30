@@ -1,5 +1,6 @@
 package com.davik.baseapp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
@@ -15,7 +16,6 @@ public class SplashActivity extends BaseActivity<SplashActivity, SplashPresenter
 
 
     @BindView(R.id.timer_tv) TextView mTimerTv;
-    //time left params
     private String mTimeHint;
     private byte mTimeLeft;
     private CountDownTimer mCountDownTimer;
@@ -76,11 +76,17 @@ public class SplashActivity extends BaseActivity<SplashActivity, SplashPresenter
 
     @Override
     public void goHome() {
-
+        Intent mIntent = new Intent();
+        mIntent.setClass(this,MainActivity.class);
+        startActivity(mIntent);
+        finish();
     }
 
     @Override
     public void goGuide() {
-
+        Intent mIntent = new Intent();
+        mIntent.setClass(this,MainActivity.class);
+        startActivity(mIntent);
+        finish();
     }
 }

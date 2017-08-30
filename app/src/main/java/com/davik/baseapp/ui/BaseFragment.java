@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 
 /**
  * Description：
- * Author: Hansion
  * Time: 2016/12/5 11:25
  */
 public abstract class BaseFragment<V extends BaseContract.IBase, P extends BasePresenter<V>>  extends Fragment implements BaseContract.IBase {

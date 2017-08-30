@@ -3,7 +3,6 @@ package com.davik.baseapp.contract;
 
 /**
  * Description：Base --- Contract
- * Author: Hansion
  */
 public interface BaseContract {
     interface  IBasePresenter {

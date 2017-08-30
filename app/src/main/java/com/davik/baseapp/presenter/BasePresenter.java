@@ -8,8 +8,6 @@ import java.lang.ref.WeakReference;
 
 /**
  * Description：对Activity进行弱引用处理的BasePresenter
- * Author: Hansion
- * Time: 2016/12/1 15:34
  */
 public abstract class BasePresenter<V extends BaseContract.IBase> implements BaseContract.IBasePresenter{
     protected Reference<V> mViewRef;
