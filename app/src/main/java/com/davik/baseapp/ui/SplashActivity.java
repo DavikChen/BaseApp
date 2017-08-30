@@ -1,5 +1,6 @@
 package com.davik.baseapp.ui;
 
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
@@ -18,7 +19,16 @@ public class SplashActivity extends BaseActivity<SplashActivity, SplashPresenter
     private String mTimeHint;
     private byte mTimeLeft;
     private CountDownTimer mCountDownTimer;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (!isTaskRoot()) {
+            finish();
+            return;
+        }
 
+
+    }
 
     @Override
     protected int initContentView() {
@@ -32,6 +42,9 @@ public class SplashActivity extends BaseActivity<SplashActivity, SplashPresenter
 
     @Override
     protected void initData() {
+        if (!isTaskRoot()) {
+            return;
+        }
         mTimeHint = getResources().getString(R.string.timer_seconds);
         mCountDownTimer = new CountDownTimer(4000, 1000) {
             @Override

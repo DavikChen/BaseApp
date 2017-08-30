@@ -29,7 +29,7 @@ public abstract class BaseActivity<V extends BaseContract.IBase, P extends BaseP
 
     //声明为final,不允许子类对该方法进行覆写已防止子类未调用super.initView()方法对view控件进行绑定
     @Override
-    final protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //设置是否全屏，如果不全屏,设置状态栏颜色
         setScreenIsFull();
