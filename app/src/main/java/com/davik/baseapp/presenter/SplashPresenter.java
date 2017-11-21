@@ -1,7 +1,7 @@
 package com.davik.baseapp.presenter;
 
 import com.davik.baseapp.contract.SplashContract;
-import com.davik.baseapp.ui.SplashActivity;
+import com.davik.baseapp.ui.activity.SplashActivity;
 import com.davik.baseapp.utils.SharedPrefsUtil;
 
 /**

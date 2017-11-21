@@ -1,12 +1,13 @@
-package com.davik.baseapp.ui;
+package com.davik.baseapp.ui.activity;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.WindowManager;
 
+import com.davik.baseapp.R;
 import com.davik.baseapp.contract.BaseContract;
 import com.davik.baseapp.presenter.BasePresenter;
+import com.davik.baseapp.ui.view.CustomProgress;
 import com.davik.baseapp.utils.AppStackManager;
 import com.davik.baseapp.utils.HLogUtil;
 
@@ -14,7 +15,9 @@ import butterknife.ButterKnife;
 
 
 /**
- * Time: 2016/12/1 16:51
+ * @class describe Activity基类
+ * @anthor davikchen
+ * @time 2017/11/21 09:28
  */
 public abstract class BaseActivity<V extends BaseContract.IBase, P extends BasePresenter<V>> extends FragmentActivity implements BaseContract.IBase {
 
@@ -23,7 +26,7 @@ public abstract class BaseActivity<V extends BaseContract.IBase, P extends BaseP
     public static final int SCREEN_FULL = 0;
     //当前类名，打印使用
     private Class<? extends BaseActivity> mClassName = this.getClass();
-    private ProgressDialog progressDialog;
+    private CustomProgress progressDialog;
 
     //声明为final,不允许子类对该方法进行覆写已防止子类未调用super.initView()方法对view控件进行绑定
     @Override
@@ -110,12 +113,11 @@ public abstract class BaseActivity<V extends BaseContract.IBase, P extends BaseP
 
 
     @Override
-    public void showProgressDialog(String title, String message) {
+    public void showProgressDialog() {
         if (progressDialog == null) {
-            progressDialog = ProgressDialog.show(BaseActivity.this, title, message, true, false);
+            progressDialog  = CustomProgress.getDialog(this, getString(R.string.loadding_prgressbar_hint), true, null);
         } else if (progressDialog.isShowing()) {
-            progressDialog.setTitle(title);
-            progressDialog.setMessage(message);
+            progressDialog.setMessage(getString(R.string.loadding_prgressbar_hint));
         }
         progressDialog.show();
     }

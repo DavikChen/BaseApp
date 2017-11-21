@@ -1,7 +1,6 @@
-package com.davik.baseapp.ui;
+package com.davik.baseapp.ui.fragment;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,15 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.davik.baseapp.R;
 import com.davik.baseapp.contract.BaseContract;
 import com.davik.baseapp.presenter.BasePresenter;
+import com.davik.baseapp.ui.view.CustomProgress;
 import com.davik.baseapp.utils.HLogUtil;
 
 import butterknife.ButterKnife;
 
 /**
- * Description：
- * Time: 2016/12/5 11:25
+ * @class describe Fragment基类
+ * @anthor davikchen
+ * @time 2017/11/21 09:28
  */
 public abstract class BaseFragment<V extends BaseContract.IBase, P extends BasePresenter<V>>  extends Fragment implements BaseContract.IBase {
 
@@ -33,7 +35,7 @@ public abstract class BaseFragment<V extends BaseContract.IBase, P extends BaseP
     protected boolean isVisible;
     private boolean isPrepared;
     private boolean isFirst = true;
-    private ProgressDialog progressDialog;
+    private CustomProgress progressDialog;
 
     @Override
     public void onAttach(Activity activity) {
@@ -170,12 +172,11 @@ public abstract class BaseFragment<V extends BaseContract.IBase, P extends BaseP
 
 
     @Override
-    public void showProgressDialog(String title, String message) {
+    public void showProgressDialog() {
         if (progressDialog == null) {
-            progressDialog = ProgressDialog.show(getActivity(), title, message, true, false);
+            progressDialog  = CustomProgress.getDialog(mActivity, getString(R.string.loadding_prgressbar_hint), true, null);
         } else if (progressDialog.isShowing()) {
-            progressDialog.setTitle(title);
-            progressDialog.setMessage(message);
+            progressDialog.setMessage(getString(R.string.loadding_prgressbar_hint));
         }
         progressDialog.show();
     }

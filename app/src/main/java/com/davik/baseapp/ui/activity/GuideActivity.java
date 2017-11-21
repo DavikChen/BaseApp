@@ -1,4 +1,4 @@
-package com.davik.baseapp.ui;
+package com.davik.baseapp.ui.activity;
 
 import com.davik.baseapp.R;
 import com.davik.baseapp.contract.GuideContract;

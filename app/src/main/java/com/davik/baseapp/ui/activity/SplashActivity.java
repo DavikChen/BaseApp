@@ -1,4 +1,4 @@
-package com.davik.baseapp.ui;
+package com.davik.baseapp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,7 +1,7 @@
 package com.davik.baseapp.presenter;
 
 import com.davik.baseapp.contract.GuideContract;
-import com.davik.baseapp.ui.GuideActivity;
+import com.davik.baseapp.ui.activity.GuideActivity;
 
 /**
  * Description：

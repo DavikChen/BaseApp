@@ -12,7 +12,8 @@ public interface BaseContract {
     interface  IBase {
 
         //显示带ProgressBar的Dialog
-        void showProgressDialog(String title, String message);
+        void showProgressDialog();
+
 
         //隐藏弹出的Dialog
         void hideProgressDialog();
