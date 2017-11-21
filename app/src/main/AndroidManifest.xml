@@ -39,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--新手引导页面-->
         <activity android:name="com.davik.baseapp.ui.activity.GuideActivity" />
     </application>
 
